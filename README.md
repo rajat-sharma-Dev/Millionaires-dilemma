@@ -9,7 +9,7 @@ A privacy-preserving DApp built on the Inco Network that enables secure comparis
 - 🌐 **Live DApp**: [millionaires-dilemma.vercel.app](https://millionaires-dilemma.vercel.app/)
 - 🎥 **Demo Video DApp**: [Watch on YouTube](https://youtu.be/yNh0Xk4eGrw)
 - 💾 **Smart Contracts Repo**: [Yatch-contracts Repository](https://github.com/rajat-sharma-Dev/Yatch-contracts.git)
-
+!!!!! The smart contracts explanation video will be found in the smart contracts repo given above!!!!!
 ---
 
 ## 🛠 Getting Started
