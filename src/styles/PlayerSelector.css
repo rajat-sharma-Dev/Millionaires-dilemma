@@ -1,0 +1,54 @@
+/* Player Selector Component Styles */
+.player-selector {
+  margin-top: 1.5rem;
+}
+
+.player-card {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+}
+
+.player-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, transparent, rgba(31, 93, 136, 0.3), transparent);
+  z-index: -1;
+  transform: scale(1.05);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: 0.5rem;
+}
+
+.player-card:hover:not(.disabled):not(.selected) {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.player-card:hover:not(.disabled):not(.selected)::before {
+  opacity: 1;
+}
+
+.error-message {
+  animation: fadeIn 0.3s ease;
+}
+
+.success-message {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

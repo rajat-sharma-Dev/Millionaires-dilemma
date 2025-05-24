@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0c1829;
+  --foreground: #ffffff;
+  --primary: #e0a955;
+  --primary-dark: #c49147;
+  --primary-light: #f5d493;
+  --secondary: #1f5d88;
+  --secondary-dark: #154666;
+  --accent: #e8505b;
+  --dark-blue: #0b1623;
+  --navy: #152d4a;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  background-image: 
+    linear-gradient(135deg, rgba(11, 22, 35, 0.97), rgba(5, 10, 20, 0.95)), 
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231f5d88' fill-opacity='0.07'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    radial-gradient(circle at 25% 25%, rgba(14, 30, 50, 0.8) 0%, transparent 40%),
+    radial-gradient(circle at 75% 75%, rgba(31, 93, 136, 0.3) 0%, transparent 40%);
+  background-attachment: fixed;
+  background-size: auto, auto, cover, cover;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  position: relative;
+}
+
+/* Animated water effect at bottom of page */
+body::after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 15vh;
+  background: linear-gradient(to bottom, rgba(31, 93, 136, 0) 0%, rgba(31, 93, 136, 0.1) 50%, rgba(21, 70, 102, 0.2) 100%);
+  z-index: -1;
+  backdrop-filter: blur(5px);
+}
+
+/* Luxury Styling */
+@layer components {
+  .yacht-container {
+    @apply bg-gradient-to-b from-[#0e1e32]/80 to-[#0a121e]/80 backdrop-blur-sm border border-[#ffffff20] rounded-xl p-6 shadow-2xl;
+  }
+  
+  .gold-gradient {
+    @apply bg-gradient-to-r from-[#e0a955] to-[#f0cb7a] hover:from-[#f0cb7a] hover:to-[#e0a955];
+  }
+
+  .luxury-button {
+    @apply gold-gradient text-[#0a121e] font-semibold px-6 py-2.5 rounded-md shadow-lg transition-all 
+    hover:shadow-xl hover:scale-105 hover:text-[#000000] flex items-center justify-center gap-2;
+  }
+  
+  .ocean-button {
+    @apply bg-gradient-to-r from-[#1f5d88] to-[#2a7dad] hover:from-[#2a7dad] hover:to-[#1f5d88]
+    text-white font-medium px-4 py-2 rounded-md shadow-lg transition-all hover:shadow-xl;
+  }
+  
+  .card-glow {
+    @apply relative before:absolute before:w-full before:h-full before:top-0 before:left-0 
+    before:bg-gradient-to-r before:from-[#e0a95510] before:via-[#e0a95520] before:to-[#e0a95510] 
+    before:rounded-xl before:z-0 before:opacity-75 before:backdrop-blur-lg;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom animations */
+@keyframes ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  75%, 100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+.animate-ping {
+  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Enhance scrollbar appearance */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-blue);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-dark);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
